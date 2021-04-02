@@ -16,7 +16,7 @@ Se Rx<br>
 Si Usuario Valido: <br>
 `{ "error" : 0, "LED" : "ON" ó "OFF", } Si Usuario Invalido { "error" : 401, }`<br>
 
->** Comando  Acces Piont (Para Buscar Redes cercanas): **<br>
+>**Comando  Acces Piont (Para Buscar Redes cercanas):**<br>
 Se Tx:<br>
 `{ "cmdo" : "accPoint", } `<br>
 Se Rx:<br> 
@@ -31,13 +31,13 @@ si se conecta: <br>
 si NO se conecta: <br>
 `{ "error" : 1, "data" : { "dirIP" : "" } }`<br>
 
-> **Comando Configurar Token del Bot (Se envia el Token del BOT): **<br>
+> **Comando Configurar Token del Bot (Se envia el Token del BOT):**<br>
 Se Tx:<br>
 `{ "cmdo" : "tokenBot", "data" : { "token" : "1163113539:AAEZfgENIoMnjdzN3kdBrqZiCGMjjC_ZcdU" } } Rx si Token valido { "error" : 0, }`<br>
 Se Rx si Token no se Conecta<br>
 `{ "error" : 401, }`<br>
 
-> **Comando Comando para BORRAR toda la Configuración (Se borra toda la EEPROM): **<br>
+> **Comando Comando para BORRAR toda la Configuración (Se borra toda la EEPROM):**<br>
 Se Tx:<br>
 `{ "cmdo" : "erraseEE", "data" : { "userName" : "Nombre del Usuario" "userID" : 123456789 } }`<br>
 Rx Si es por el Administrador <br>
@@ -45,7 +45,7 @@ Rx Si es por el Administrador <br>
 Se Rx Si NO es por el Administrador <br>
 `{ "error" : 401, } `<br>
 
->** Tx Comando para Ver Todos los Usuarios (Se Rex en Json todos los Usuarios Registrados): **<br>
+>**Tx Comando para Ver Todos los Usuarios (Se Rex en Json todos los Usuarios Registrados):**<br>
 Se Tx si es Administrador:<br>
 `{ "cmdo" : " verAllUser", "data" : { "userName" : "Nombre del Usuario" "userID" : 123456789 } } `<br>
 Rx Si es por el Administrador <br>
