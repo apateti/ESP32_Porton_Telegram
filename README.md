@@ -1,5 +1,5 @@
 # ESP32_Porton_Telegram
-*Realizado por*:** APateti**<br>
+*Realizado por*:**APateti**<br>
 Proyecto para Controlar un Portón Electrico con ESP32 utilizando el servicio Telegram.<br>
 
 El control puede ser realizado mediante un BOT de Telegram o via WEB mediante API Json mediante una App (por ahora en Android).
