@@ -6,7 +6,7 @@ El control puede ser realizado mediante un BOT de Telegram o via WEB mediante AP
 
 Para Configurar inicialmente el Equipo, debe crearse un BOT y el primer usuario sera considerado como el Administrador del Sistema. Luego mediante la App ese administrador debe configurar el Equipo para que se conecte al Router que le dara acceso a Internet, para luego enviarle el Token del Bot al Equipo. Luego de tener la configuracion inicial, el administrador debe suministrar a cada usuario que desee agregar al sistema el enlace del BOT, para que cada uno se registre de manera Individual. Hay que indicar que solo el Administrador puede permitir, o no, el registro de cada usuario, y esto se hace mediante la App.
 El Hardware utilizado es:<br>
-[![Circuito ESP32-Telegram](Circuito "Circuito ESP32-Telegram")](https://github.com/apateti/ESP32_Porton_Telegram/issues/1#issue-849247271)
+[![Circuito ESP32-Telegram](https://github.com/apateti/ESP32_Porton_Telegram/issues/1#issue-849247271)
 
 API del ESP32 controlador del Porton:
 > **Comando: Toggle LED**<br>
