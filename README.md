@@ -16,67 +16,67 @@ Se Rx<br>
 Si Usuario Valido: <br>
 `{ "error" : 0, "LED" : "ON" ó "OFF", } Si Usuario Invalido { "error" : 401, }`<br>
 
->** Comando  Acces Piont (Para Buscar Redes cercanas): **
-Se Tx:
-`{ "cmdo" : "accPoint", } `
-Se Rx: 
+>** Comando  Acces Piont (Para Buscar Redes cercanas): **<br>
+Se Tx:<br>
+`{ "cmdo" : "accPoint", } `<br>
+Se Rx:<br> 
 `{ "error": 0, "wifi": [ { "ssid": "AP_Home_IoT", "qos": 4, "encryption": 3 }, { "ssid": "MERCUSYS_7A5B", "qos": 2, "encryption": 4 }, { "ssid": "AP_Home_IoT_R", "qos": 2, "encryption": 3 }, { "ssid": "AP_MQTT_PIR_11E15C", "qos": 1, "encryption": 3 } ] } `
 
-> **Comando Conectarse Acces Piont (Se conecta al Router Seleccionado):**
-Se Tx:
-`{ "cmdo" : "conectAP", "data" : { "ssid" : "SSID Router" "pass" : "PASS Router" } }`
-Se Rx 
-si se conecta: 
-`{ "error" : 0, "data" : { "dirIP" : "192.168.1.x" } }`
-si NO se conecta: 
-`{ "error" : 1, "data" : { "dirIP" : "" } }`
+> **Comando Conectarse Acces Piont (Se conecta al Router Seleccionado):**<br>
+Se Tx:<br>
+`{ "cmdo" : "conectAP", "data" : { "ssid" : "SSID Router" "pass" : "PASS Router" } }`<br>
+Se Rx <br>
+si se conecta: <br>
+`{ "error" : 0, "data" : { "dirIP" : "192.168.1.x" } }`<br>
+si NO se conecta: <br>
+`{ "error" : 1, "data" : { "dirIP" : "" } }`<br>
 
-> **Comando Configurar Token del Bot (Se envia el Token del BOT): **
-Se Tx:
-`{ "cmdo" : "tokenBot", "data" : { "token" : "1163113539:AAEZfgENIoMnjdzN3kdBrqZiCGMjjC_ZcdU" } } Rx si Token valido { "error" : 0, }`
-Se Rx si Token no se Conecta
-`{ "error" : 401, }`
+> **Comando Configurar Token del Bot (Se envia el Token del BOT): **<br>
+Se Tx:<br>
+`{ "cmdo" : "tokenBot", "data" : { "token" : "1163113539:AAEZfgENIoMnjdzN3kdBrqZiCGMjjC_ZcdU" } } Rx si Token valido { "error" : 0, }`<br>
+Se Rx si Token no se Conecta<br>
+`{ "error" : 401, }`<br>
 
-> **Comando Comando para BORRAR toda la Configuración (Se borra toda la EEPROM): **
-Se Tx:
-`{ "cmdo" : "erraseEE", "data" : { "userName" : "Nombre del Usuario" "userID" : 123456789 } }`
-Rx Si es por el Administrador 
-`{ "error" : 0, }`
-Se Rx Si NO es por el Administrador 
-`{ "error" : 401, } `
+> **Comando Comando para BORRAR toda la Configuración (Se borra toda la EEPROM): **<br>
+Se Tx:<br>
+`{ "cmdo" : "erraseEE", "data" : { "userName" : "Nombre del Usuario" "userID" : 123456789 } }`<br>
+Rx Si es por el Administrador <br>
+`{ "error" : 0, }`<br>
+Se Rx Si NO es por el Administrador <br>
+`{ "error" : 401, } `<br>
 
->** Tx Comando para Ver Todos los Usuarios (Se Rex en Json todos los Usuarios Registrados): **
-Se Tx si es Administrador:
-`{ "cmdo" : " verAllUser", "data" : { "userName" : "Nombre del Usuario" "userID" : 123456789 } } `
-Rx Si es por el Administrador 
-`{ "error": 0, "data": [ { "regID": 0, "userId": 719665380, "userName": "" }, { "regID": 1, "userId": 823052773, "userName": "DPateti" } ] }`
-Rx Si NO es por el Administrador
-`{ "error" : 401, }`
+>** Tx Comando para Ver Todos los Usuarios (Se Rex en Json todos los Usuarios Registrados): **<br>
+Se Tx si es Administrador:<br>
+`{ "cmdo" : " verAllUser", "data" : { "userName" : "Nombre del Usuario" "userID" : 123456789 } } `<br>
+Rx Si es por el Administrador <br>
+`{ "error": 0, "data": [ { "regID": 0, "userId": 719665380, "userName": "" }, { "regID": 1, "userId": 823052773, "userName": "DPateti" } ] }`<br>
+Rx Si NO es por el Administrador<br>
+`{ "error" : 401, }`<br>
 
-> **Tx Comando para Registrar Usuarios (Se Registra un Usuario almacenándolo en la EEPROM):** 
-Se Tx:
-`{ "cmdo" : " registrar", "data" : { "userName" : "Nombre del Usuario" "userID" : 123456789, "adminName" : "Nombre del Administrador" "adminID" : 123456789}}`
+> **Tx Comando para Registrar Usuarios (Se Registra un Usuario almacenándolo en la EEPROM):** <br>
+Se Tx:<br>
+`{ "cmdo" : " registrar", "data" : { "userName" : "Nombre del Usuario" "userID" : 123456789, "adminName" : "Nombre del Administrador" "adminID" : 123456789}}`<br>
 Rx Si es por el Administrador y se Graba en la EEPROM 
-`{ "error": 0, }`
-Rx Si es por el Administrador y NO se puede Graba en la EEPROM
-`{ "error" : 400, }`
-Rx Si NO es por el Administrador
-`{ "error" : 401, }`
+`{ "error": 0, }`<br>
+Rx Si es por el Administrador y NO se puede Graba en la EEPROM<br>
+`{ "error" : 400, }`<br>
+Rx Si NO es por el Administrador<br>
+`{ "error" : 401, }`<br>
 
-> **Tx Comando para Ver Todos los Usuarios que solicitaron Registrarse (Se Rx en Json todos los Usuarios que solicitaron Registrados):**
-Se Tx:
-`{ "cmdo" : " verRegistro", "data" : { "userName" : "Nombre del Usuario" "userID" : 123456789 } }`
-Rx Si es por el Administrador
-`{ "error": 0, "data": [ { "regID": 0, "userId": 719665380, "userName": "" }, { "regID": 1, "userId": 823052773, "userName": "DPateti" } ] }`
-Rx Si NO es por el Administrador
-`{ "error" : 401, }`
+> **Tx Comando para Ver Todos los Usuarios que solicitaron Registrarse (Se Rx en Json todos los Usuarios que solicitaron Registrados):**<br>
+Se Tx:<br>
+`{ "cmdo" : " verRegistro", "data" : { "userName" : "Nombre del Usuario" "userID" : 123456789 } }`<br>
+Rx Si es por el Administrador<br>
+`{ "error": 0, "data": [ { "regID": 0, "userId": 719665380, "userName": "" }, { "regID": 1, "userId": 823052773, "userName": "DPateti" } ] }`<br>
+Rx Si NO es por el Administrador<br>
+`{ "error" : 401, }`<br>
 
-> **Tx Comando para Eliminar un Usuarios (Se borra de la EEPROM el usuario):
-Se Tx:**
-`{ "cmdo" : " erraseUser", "data" : { "adminName" : "Nombre del Administrador" "adminID" : 123456789 "userName" : "Nombre del Usuario" "userID" : 123456789 "regID": 1, } }`
-Rx Si es por el Administrador y se borra el Usuario
-`{ "error": 0, }`
-Rx Si es por el Administrador y NO se borra el Usuario
-`{ "error" : 400, }`
-Rx Si NO es por el Administrador
-`{ "error" : 401, }`
+> **Tx Comando para Eliminar un Usuarios (Se borra de la EEPROM el usuario):<br>
+Se Tx:**<br>
+`{ "cmdo" : " erraseUser", "data" : { "adminName" : "Nombre del Administrador" "adminID" : 123456789 "userName" : "Nombre del Usuario" "userID" : 123456789 "regID": 1, } }`<br>
+Rx Si es por el Administrador y se borra el Usuario<br>
+`{ "error": 0, }`<br>
+Rx Si es por el Administrador y NO se borra el Usuario<br>
+`{ "error" : 400, }`<br>
+Rx Si NO es por el Administrador<br>
+`{ "error" : 401, }`<br>
