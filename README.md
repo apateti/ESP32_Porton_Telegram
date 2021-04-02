@@ -5,16 +5,16 @@ Proyecto para Controlar un Portón Electrico con ESP32 utilizando el servicio Te
 El control puede ser realizado mediante un BOT de Telegram o via WEB mediante API Json mediante una App (por ahora en Android).
 
 Para Configurar inicialmente el Equipo, debe crearse un BOT y el primer usuario sera considerado como el Administrador del Sistema. Luego mediante la App ese administrador debe configurar el Equipo para que se conecte al Router que le dara acceso a Internet, para luego enviarle el Token del Bot al Equipo. Luego de tener la configuracion inicial, el administrador debe suministrar a cada usuario que desee agregar al sistema el enlace del BOT, para que cada uno se registre de manera Individual. Hay que indicar que solo el Administrador puede permitir, o no, el registro de cada usuario, y esto se hace mediante la App.
-El Hardware utilizado es:
+El Hardware utilizado es:<br>
 [![Circuito ESP32-Telegram](Circuito "Circuito ESP32-Telegram")](https://user-images.githubusercontent.com/50499248/113419461-7c509c80-9395-11eb-9cd4-4d92ae791c15.jpg "Circuito ESP32-Telegram")
 
 API del ESP32 controlador del Porton:
-> **Comando: Toggle LED**
-Se Tx:
-`{ "cmdo" : "toggle", "data" : { "userName" : "Nombre del Usuario" "userID" : 123456789 } }`
-Se Rx
-Si Usuario Valido: 
-`{ "error" : 0, "LED" : "ON" ó "OFF", } Si Usuario Invalido { "error" : 401, }`
+> **Comando: Toggle LED**<br>
+Se Tx:<br>
+`{ "cmdo" : "toggle", "data" : { "userName" : "Nombre del Usuario" "userID" : 123456789 } }`<br>
+Se Rx<br>
+Si Usuario Valido: <br>
+`{ "error" : 0, "LED" : "ON" ó "OFF", } Si Usuario Invalido { "error" : 401, }`<br>
 
 >** Comando  Acces Piont (Para Buscar Redes cercanas): **
 Se Tx:
